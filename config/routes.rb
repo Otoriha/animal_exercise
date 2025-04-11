@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
-  get "user_sessions/new"
-  get "user_sessions/create"
-  get "user_sessions/destroy"
+  get "contacts/new"
+  get "contacts/create"
   get "posts/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -22,4 +21,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
   resource :user_profiles, only: %i[new create show edit update]
+  resources :contacts, only: [ :new, :create ]
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
 end
