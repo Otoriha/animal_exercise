@@ -15,6 +15,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "posts#index"
 
+  get 'login', to: 'user_sessions#new'
+  post 'login', to: 'user_sessions#create'
+  get 'logout', to: 'user_sessions#destroy'
+
+  resources :users, only: %i[new create]
+  resource :user_profiles, only: %i[new create show edit update]
   resources :contacts, only: [ :new, :create ]
 
   if Rails.env.development?
