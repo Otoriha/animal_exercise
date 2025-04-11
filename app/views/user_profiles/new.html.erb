@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <h1> プロフィール </h1>
+      <%= form_with model: @profile, class: "new_board" do |f| %>
+        <div class="mb-3">
+          <%= f.label :height %>
+          <%= f.text_field :height, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+        <%= f.label :weight %>
+        <%= f.text_field :weight, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+        <%= f.label :birth_date %>
+        <%= f.date_select :birth_date, class: "form-control" %>
+        </div>
+        <div class="mb-3">
+        <%= f.label :goal %>
+        <%= f.text_field :goal, class: "form-control" %>
+        </div>
+        <%= f.submit nil, class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

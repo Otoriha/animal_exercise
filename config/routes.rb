@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   get 'logout', to: 'user_sessions#destroy'
 
   resources :users, only: %i[new create]
+  resource :user_profiles, only: %i[new create show edit update]
 end
