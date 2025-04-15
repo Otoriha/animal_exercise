@@ -8,9 +8,8 @@ class UserProfilesController < ApplicationController
   end
 
   def create
-    params[:user_profile][:birth_date] = birth_date
     @profile = UserProfile.new(profile_params)
-
+    binding.pry
     if @profile.save
       redirect_to user_profiles_path
     else
@@ -20,12 +19,9 @@ class UserProfilesController < ApplicationController
 
   private
     def profile_params
-      params.require(:user_profile).permit(:height, :weight, :goal, :birth_date)
-    end
-
-    def birth_date
-      year = params[:user_profile]["birth_date(1i)"].to_i
-      month = params[:user_profile]["birth_date(2i)"].to_i
-      day = params[:user_profile]["birth_date(3i)"].to_i
+      user_profile_params = params.require(:user_profile).permit(:height, :weight, :goal).merge(user_id: current_user.id)
+      user_profile_params[:height] = user_profile_params[:height].to_f
+      user_profile_params[:weight] = user_profile_params[:weight].to_f
+      user_profile_params
     end
 end
