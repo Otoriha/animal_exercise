@@ -1,5 +1,9 @@
 class ContactsController < ApplicationController
   skip_before_action :require_login
+  def complete
+    @message = session.delete(:contact_message)
+  end
+
   def new
     @contact = Contact.new
   end
@@ -9,7 +13,8 @@ class ContactsController < ApplicationController
     if @contact.valid?
       ContactMailer.send_contact_email(@contact).deliver_now
       flash[:notice] = "お問い合わせが送信されました。"
-      redirect_to root_path
+      session[:contact_message] = @contact.message
+      redirect_to complete_contacts_path
     else
       flash.now[:alert] = "送信に失敗しました。入力内容を確認してください。"
       render :new
