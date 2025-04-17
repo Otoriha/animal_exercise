@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   post "login", to: "user_sessions#create"
   get "logout", to: "user_sessions#destroy"
 
+  get "/help",    to: "pages#help"
+  get "/terms",   to: "pages#terms"
+  get "/privacy", to: "pages#privacy"
+
   resources :users, only: %i[new create]
   resource :user_profiles, only: %i[new create show edit update]
   resources :contacts, only: %i[new create] do
