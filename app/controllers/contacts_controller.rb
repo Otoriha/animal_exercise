@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   def complete
     @message = session.delete(:contact_message)
   end
-  
+
   def new
     @contact = Contact.new
   end

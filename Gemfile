@@ -35,8 +35,8 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 gem "letter_opener_web", "2.0.0"
 
-gem 'pry-rails'
-gem 'pry-byebug'
+gem "pry-rails"
+gem "pry-byebug"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -62,4 +62,4 @@ end
 
 gem "tailwindcss-rails"
 gem "tailwindcss-ruby", "3.4.17"
-gem 'sorcery', '0.16.3'
+gem "sorcery", "0.16.3"
