@@ -1,0 +1,100 @@
+<!-- メインコンテンツ -->
+<main id="mypage-main" class="container mx-auto px-4 py-6 max-w-3xl">
+    <div class="w-full" data-controller="mypage" data-mypage-default-tab-value="pet">
+        <!-- タブリスト -->
+        <div class="flex border-b border-gray-200">
+            <button data-tab="pet" data-mypage-target="tab" data-action="click->mypage#switchTab" class="flex-1 px-4 py-2 text-center text-sm font-medium text-gray-700 border-b-2 border-transparent data-[state=active]:border-blue-500 data-[state=active]:text-blue-500" data-state="inactive">ペット情報</button>
+            <button data-tab="training" data-mypage-target="tab" data-action="click->mypage#switchTab" class="flex-1 px-4 py-2 text-center text-sm font-medium text-gray-700 border-b-2 border-transparent data-[state=active]:border-blue-500 data-[state=active]:text-blue-500" data-state="inactive">トレーニングメニュー</button>
+        </div>
+
+        <!-- ペット情報タブ -->
+        <div id="tab-content-pet" data-tab-content="pet" data-mypage-target="content" data-state="inactive">
+            <div class="bg-white rounded-lg shadow p-6 mb-6">
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-6">
+                    <!-- ペット画像 -->
+                    <div class="flex flex-col items-center">
+                        <img id="pet-image" src="https://via.placeholder.com/160" alt="ペット画像" class="rounded-lg w-40 h-40 object-cover"/>
+                        <h3 id="pet-evolution-name" class="mt-2 text-lg font-bold"></h3>
+                        <div id="pet-evolution-description" class="mt-1 text-sm text-center text-gray-600"></div>
+                    </div>
+
+                    <!-- ペットステータス -->
+                    <div class="flex-1 w-full">
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span id="pet-level" class="text-sm font-medium"></span>
+                                <span id="pet-next-level-points" class="text-sm text-gray-500"></span>
+                            </div>
+                            <div class="progress-bar-container">
+                                 <div id="pet-overall-progress" class="progress-bar bg-blue-600" style="width: 0%;"></div>
+                            </div>
+                        </div>
+
+                        <!-- 部位ごとのパラメータ -->
+                        <div id="pet-parameters" class="space-y-4">
+                            <!-- JSで生成 -->
+                        </div>
+
+                        <!-- 次の進化条件 -->
+                        <div class="mt-4 p-3 bg-gray-50 rounded-md">
+                            <h4 class="text-sm font-semibold mb-2">次の進化条件</h4>
+                            <div id="next-evolution" class="grid grid-cols-3 gap-2 text-xs">
+                                <!-- JSで生成 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 獲得した報酬 -->
+            <div class="bg-white rounded-lg shadow p-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold flex items-center">
+                        <span class="mr-2">🏆</span> <!-- Award icon placeholder -->
+                        獲得した報酬
+                    </h3>
+                    <button class="text-blue-500 text-sm flex items-center">
+                        すべて見る <span class="ml-1">&gt;</span> <!-- ChevronRight placeholder -->
+                    </button>
+                </div>
+                <div id="rewards-section">
+                    <!-- JSで生成 -->
+                </div>
+            </div>
+        </div>
+
+        <!-- トレーニングメニュータブ -->
+        <div id="tab-content-training" data-tab-content="training" data-mypage-target="content" data-state="inactive">
+            <div class="bg-white rounded-lg shadow p-4 mb-6">
+                <h3 class="font-bold mb-4">おすすめトレーニング</h3>
+                <div id="exercises-list" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- JSで生成 -->
+                </div>
+            </div>
+
+            <!-- トレーニング統計 -->
+            <div class="bg-white rounded-lg shadow p-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="font-bold">トレーニング統計</h3>
+                    <button class="text-blue-500 text-sm flex items-center">
+                        詳細 <span class="ml-1">&gt;</span> <!-- ChevronRight placeholder -->
+                    </button>
+                </div>
+                <div class="mt-3 grid grid-cols-3 text-center">
+                    <div>
+                        <div class="text-gray-500 text-xs">今週のトレーニング</div>
+                        <div id="training-stats-weekly" class="font-bold text-lg"></div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 text-xs">総トレーニング時間</div>
+                        <div id="training-stats-total" class="font-bold text-lg"></div>
+                    </div>
+                    <div>
+                        <div class="text-gray-500 text-xs">平均フォーム精度</div>
+                        <div id="training-stats-accuracy" class="font-bold text-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

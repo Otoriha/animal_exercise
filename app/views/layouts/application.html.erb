@@ -18,15 +18,28 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
-  <body>
+  <body class="bg-gray-100 pt-16 pb-16">
+    <% if @show_header %>
+      <%= render 'layouts/header' %>
+    <% end %>
+
     <% if flash[:notice] %>
-      <p style="color: green;"><%= flash[:notice] %></p>
+      <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 fixed top-16 left-0 right-0 z-20 w-full max-w-xl mx-auto" role="alert">
+        <p><%= flash[:notice] %></p>
+      </div>
     <% end %>
     <% if flash[:alert] %>
-      <p style="color: red;"><%= flash[:alert] %></p>
+      <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4 fixed top-16 left-0 right-0 z-20 w-full max-w-xl mx-auto" role="alert">
+        <p><%= flash[:alert] %></p>
+      </div>
     <% end %>
-    <main class="container mx-auto mt-28 px-5 flex">
+
+    <main class="container mx-auto px-4 py-6 flex">
       <%= yield %>
     </main>
+
+    <% if @show_footer %>
+      <%= render 'layouts/footer' %>
+    <% end %>
   </body>
 </html>

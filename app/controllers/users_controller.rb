@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :set_header_flag, only: %i[new create]
 
   def new
     @user = User.new
@@ -18,5 +19,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
+  end
+
+  def set_header_flag
+    @show_header = true
   end
 end

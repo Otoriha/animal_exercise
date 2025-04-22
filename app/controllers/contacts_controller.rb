@@ -1,5 +1,11 @@
 class ContactsController < ApplicationController
   skip_before_action :require_login
+  before_action :set_footer_flag, only: %i[new]
+
+  def complete
+    @message = session.delete(:contact_message)
+  end
+
   def new
     @contact = Contact.new
   end
@@ -19,6 +25,10 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :message)
+    params.require(:contact).permit(:name, :email, :message)
+  end
+
+  def set_footer_flag
+    @show_footer = true
   end
 end
