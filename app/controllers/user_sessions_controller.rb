@@ -1,6 +1,5 @@
 class UserSessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
-  before_action :set_header_flag, only: %i[new create]
 
   def new
     @user = User.new
@@ -23,8 +22,4 @@ class UserSessionsController < ApplicationController
   end
 
   private
-
-  def set_header_flag
-    @show_header = true
-  end
 end

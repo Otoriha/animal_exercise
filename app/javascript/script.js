@@ -235,4 +235,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初期タブを設定 (例: ペット情報)
     setActiveTab('pet');
-}); 
+});

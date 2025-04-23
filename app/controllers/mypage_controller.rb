@@ -1,10 +1,8 @@
 class MypageController < ApplicationController
   before_action :require_login
   before_action :set_user_profile
-  before_action :set_header_flag, only: %i[index]
 
   def index
-    # 本来はデータベースなどから取得しますが、ここではダミーデータを使用します。
     @user_data = {
       username: "トレーニング太郎",
       last_login: "2025-04-10T15:30:00"
@@ -17,7 +15,7 @@ class MypageController < ApplicationController
       points_to_next_level: 100,
       evolution_name: "初級猫トレーナー",
       evolution_description: "トレーニングを始めたばかりの初心者猫。基本的な動きをマスターし始めています。",
-      image_url: "https://via.placeholder.com/160", # Placeholder image
+      image_url: "https://via.placeholder.com/160",
       parameters: {
         arm: { level: 5, experience: 85, next_level_exp: 100 },
         belly: { level: 6, experience: 30, next_level_exp: 120 },
@@ -73,7 +71,6 @@ class MypageController < ApplicationController
       }
     ].to_json
 
-    # トレーニング統計データ (これも本来は動的に生成)
     @training_stats = {
       weekly_sessions: 3,
       total_time_minutes: 45,
@@ -84,11 +81,7 @@ class MypageController < ApplicationController
   private
 
   def set_user_profile
-    Rails.logger.debug "Current User in set_user_profile (before access): #{current_user.inspect}"
     @user_profile = current_user.user_profile || current_user.build_user_profile
   end
-
-  def set_header_flag
-    @show_header = true
-  end
 end
+

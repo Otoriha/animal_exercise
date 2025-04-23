@@ -1,4 +1,4 @@
-<header class="bg-yellow-500 shadow-sm p-4 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
+<header class="bg-black shadow-sm p-4 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
     <div class="flex items-center space-x-2">
         <h1 id="username" class="text-xl font-bold text-gray-800">
             <%= if current_user
@@ -10,12 +10,13 @@
         <span id="last-login" class="text-xs text-gray-600"></span>
     </div>
     <div class="flex items-center space-x-4">
-        <button class="relative">
-            <span>🔔</span>
-            <span id="rewards-badge" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full px-1.5 py-0.5 hidden"></span>
-        </button>
+        <% if current_user %>
+          <%= button_to "ログアウト", logout_path, method: :delete, class: "text-white hover:text-gray-300" %>
+        <% end %>
         <button>
-            <span>⚙️</span>
+            <%= link_to user_profiles_path do %>
+                <span>⚙️</span>
+            <% end %>
         </button>
     </div>
 </header>

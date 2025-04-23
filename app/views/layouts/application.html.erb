@@ -19,9 +19,7 @@
   </head>
 
   <body class="bg-gray-100 pt-16 pb-16">
-    <% if @show_header %>
-      <%= render 'layouts/header' %>
-    <% end %>
+    <%= render 'shared/header' %>
 
     <% if flash[:notice] %>
       <div class="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4 fixed top-16 left-0 right-0 z-20 w-full max-w-xl mx-auto" role="alert">
@@ -38,8 +36,6 @@
       <%= yield %>
     </main>
 
-    <% if @show_footer %>
-      <%= render 'layouts/footer' %>
-    <% end %>
+    <%= render 'shared/footer' %>
   </body>
 </html>
