@@ -11,4 +11,3 @@ class MypageController < ApplicationController
     @user_profile = current_user.user_profile || current_user.build_user_profile
   end
 end
-
