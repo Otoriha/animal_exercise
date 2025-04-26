@@ -6,7 +6,7 @@ class UserProfile < ActiveRecord::Migration[7.2]
       t.date   :birth_date
       t.string :goal
       t.references :user, foreign_key: true
-      t.timestamps                null: false
+      t.timestamps null: false
     end
   end
 end

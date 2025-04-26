@@ -1,0 +1,11 @@
+<p>お問い合わせ内容確認</p>
+<p><%= @message %></p>
+
+<p>
+  <% if current_user %>
+    <%= link_to 'マイページへ戻る', '/mypage' %> <%# とりあえずルーティングエラー出ないようにリンクを適当なものにしてます %>
+    <%= link_to 'トップページへ戻る', root_path %>
+  <% else %>
+    <%= link_to 'トップページへ戻る', root_path %>
+  <% end %>
+</p>
