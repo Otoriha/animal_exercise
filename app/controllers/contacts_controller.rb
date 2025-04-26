@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
   skip_before_action :require_login
+
   def complete
     @message = session.delete(:contact_message)
   end
@@ -24,6 +25,6 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :message)
+    params.require(:contact).permit(:name, :email, :message)
   end
 end
