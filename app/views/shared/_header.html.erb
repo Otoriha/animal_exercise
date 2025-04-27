@@ -1,0 +1,22 @@
+<header class="bg-black shadow-sm p-4 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
+    <div class="flex items-center space-x-2">
+        <h1 id="username" class="text-xl font-bold text-gray-800">
+            <%= if current_user
+                  "#{current_user.first_name} #{current_user.last_name}"
+                else
+                  'ゲスト'
+                end %>さん
+        </h1>
+        <span id="last-login" class="text-xs text-gray-600"></span>
+    </div>
+    <div class="flex items-center space-x-4">
+        <% if current_user %>
+          <%= button_to "ログアウト", logout_path, method: :delete, class: "text-white hover:text-gray-300" %>
+        <% end %>
+        <button>
+            <%= link_to user_profiles_path do %>
+                <span>⚙️</span>
+            <% end %>
+        </button>
+    </div>
+</header>
