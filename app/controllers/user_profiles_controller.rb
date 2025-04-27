@@ -9,7 +9,6 @@ class UserProfilesController < ApplicationController
 
   def create
     @profile = UserProfile.new(profile_params)
-    binding.pry
     if @profile.save
       redirect_to user_profiles_path
     else
@@ -17,11 +16,31 @@ class UserProfilesController < ApplicationController
     end
   end
 
+  def show
+    @profile = current_user.user_profile
+  end
+
+  def edit
+    @user = current_user
+    @profile = current_user.user_profile
+  end
+
+  def update
+    @user = current_user
+    if @user.update(profile_params_update)
+      redirect_to edit_user_profiles_path, notice: "更新に成功しました"
+    else
+      render :edit
+    end
+  end
+
   private
     def profile_params
       user_profile_params = params.require(:user_profile).permit(:height, :weight, :goal).merge(user_id: current_user.id)
-      user_profile_params[:height] = user_profile_params[:height].to_f
-      user_profile_params[:weight] = user_profile_params[:weight].to_f
-      user_profile_params
+    end
+
+    def profile_params_update
+      params.require(:user).permit(:first_name, :last_name, :email,
+      user_profile_attributes: [:id, :height, :weight, :goal])
     end
 end
