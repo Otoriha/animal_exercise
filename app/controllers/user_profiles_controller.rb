@@ -41,6 +41,6 @@ class UserProfilesController < ApplicationController
 
     def profile_params_update
       params.require(:user).permit(:first_name, :last_name, :email,
-      user_profile_attributes: [:id, :height, :weight, :goal])
+      user_profile_attributes: [ :id, :height, :weight, :goal ])
     end
 end

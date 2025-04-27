@@ -214,11 +214,8 @@ GEM
     pry-byebug (3.11.0)
       byebug (~> 12.0)
       pry (>= 0.13, < 0.16)
-<<<<<<< HEAD
-=======
     pry-rails (0.3.11)
       pry (>= 0.13.0)
->>>>>>> main
     psych (5.2.3)
       date
       stringio
@@ -381,10 +378,7 @@ DEPENDENCIES
   letter_opener_web (= 2.0.0)
   pg (~> 1.1)
   pry-byebug
-<<<<<<< HEAD
-=======
   pry-rails
->>>>>>> main
   puma (>= 5.0)
   rails (~> 7.2.1)
   rubocop-rails-omakase
