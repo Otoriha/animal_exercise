@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-8 offset-lg-2">
-      <h1> プロフィール </h1>
+      <h1>プロフィール</h1>
       <%= form_with model: @user, url: user_profiles_path, class: "new_board" do |f| %>
-                <div class="mb-3">
+        <div class="mb-3">
           <%= f.label :last_name, class: "form-label" %>
           <%= f.text_field :last_name, class: "form-control" %>
         </div>
@@ -17,17 +17,17 @@
         </div>
         <%= f.fields_for :user_profile do |p| %>
           <div class="mb-3">
-          <%= p.label :height %>
-          <%= p.number_field :height, class: "form-control", step: 0.1 %>
-        </div>
-        <div class="mb-3">
-        <%= p.label :weight %>
-        <%= p.number_field :weight, class: "form-control", step: 0.1 %>
-        </div>
-        <div class="mb-3">
-        <%= p.label :goal %>
-        <%= p.text_field :goal, class: "form-control" %>
-        </div>
+            <%= p.label :height %>
+            <%= p.number_field :height, class: "form-control", step: 0.1 %>
+          </div>
+          <div class="mb-3">
+            <%= p.label :weight %>
+            <%= p.number_field :weight, class: "form-control", step: 0.1 %>
+          </div>
+          <div class="mb-3">
+            <%= p.label :goal %>
+            <%= p.text_field :goal, class: "form-control" %>
+          </div>
         <% end %>
         <%= f.submit nil, class: "btn btn-primary" %>
       <% end %>
