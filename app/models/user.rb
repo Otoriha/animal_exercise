@@ -9,4 +9,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
 
   has_one :user_profile
+  accepts_nested_attributes_for :user_profile
 end
