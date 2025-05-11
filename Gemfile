@@ -62,4 +62,5 @@ end
 
 gem "tailwindcss-rails"
 gem "tailwindcss-ruby", "3.4.17"
+gem "pry-byebug"
 gem "sorcery", "0.16.3"

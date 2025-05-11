@@ -1,1 +1,9 @@
-a
+
+<%=  @profile.user.email%>
+<%= @profile.user.first_name %>
+<%= @profile.user.last_name %>
+<%= @profile.height %>
+<%= @profile.weight %>
+<%= @profile.goal %>
+<%= @profile.user_id %>
+<%= link_to '編集', edit_user_profiles_path %>

@@ -9,9 +9,9 @@ class UserSessionsController < ApplicationController
     @user = login(params[:email], params[:password])
 
     if @user
-      redirect_to root_path, notice: 'ログインしました', data: { turbo: false }
+      redirect_to root_path, notice: "ログインしました", data: { turbo: false }
     else
-      flash.now[:alert] = 'ログインに失敗しました'
+      flash.now[:alert] = "ログインに失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
