@@ -1,25 +1,37 @@
-<h1>お問い合わせ</h1>
-<%= form_with(model: @contact, url: contacts_path, method: :post, data: { turbo: false }) do |f|  %> <!-- バリデーションメッセージが出ないためturboを無効化してます -->
-  <div>
-    <%= f.label :name, 'お名前' %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :message, 'お問い合わせ内容' %><br>
-    <%= f.text_area :message %>
-  </div>
-  <% if @contact.errors.any? %>
-  <div style="color: red;">
-    <ul>
-      <% @contact.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
-  <div>
-    <%= f.submit '送信' %>
-  </div>
-<% end %>
+<main class="container mx-auto px-4 py-6">
+  <div class="flex justify-center">
+    <div class="w-full max-w-xl mx-auto bg-white rounded-lg shadow p-6">
+      <h1 class="text-2xl font-bold mb-6">お問い合わせ</h1>
 
-<%= link_to 'プロフィール', user_profile_path %>
+      <%= form_with(model: @contact, url: contacts_path, method: :post, data: { turbo: false }) do |f| %>
+        <div class="mb-4">
+          <%= f.label :name, 'お名前', class: "block text-sm font-medium text-gray-700 mb-1" %>
+          <%= f.text_field :name, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+        </div>
+
+        <div class="mb-4">
+          <%= f.label :message, 'お問い合わせ内容', class: "block text-sm font-medium text-gray-700 mb-1" %>
+          <%= f.text_area :message, rows: 5, class: "w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" %>
+        </div>
+
+        <% if @contact.errors.any? %>
+          <div class="mb-4 bg-red-100 border border-red-300 text-red-700 rounded p-3">
+            <ul class="list-disc pl-5 text-sm">
+              <% @contact.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="mt-4">
+          <%= f.submit '送信', class: "bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded" %>
+        </div>
+      <% end %>
+
+      <div class="mt-6">
+        <%= link_to 'プロフィールへ戻る', user_profiles_path, class: "text-blue-500 hover:underline text-sm" %>
+      </div>
+    </div>
+  </div>
+</main>
