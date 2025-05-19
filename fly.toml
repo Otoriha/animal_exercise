@@ -1,21 +1,21 @@
-# fly.toml app configuration file generated for animal-exercise on 2025-05-19T11:13:41+09:00
+# fly.toml app configuration file generated for animal-exercise-123 on 2025-05-19T16:51:56+09:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'animal-exercise'
+app = 'animal-exercise-123'
 primary_region = 'nrt'
 console_command = '/rails/bin/rails console'
 
 [build]
-  dockerfile = "Dockerfile"       # ルートの Dockerfile を使う
-
-[env]
-  RAILS_ENV = "production"
-  RAILS_SERVE_STATIC_FILES = "true"
+  dockerfile = 'Dockerfile'
 
 [deploy]
   release_command = './bin/rails db:prepare'
+
+[env]
+  RAILS_ENV = 'production'
+  RAILS_SERVE_STATIC_FILES = 'true'
 
 [http_service]
   internal_port = 3000
