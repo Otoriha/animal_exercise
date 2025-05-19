@@ -64,3 +64,5 @@ gem "tailwindcss-rails"
 gem "tailwindcss-ruby", "3.4.17"
 gem "pry-byebug"
 gem "sorcery", "0.16.3"
+
+gem "dockerfile-rails", ">= 1.7", group: :development
