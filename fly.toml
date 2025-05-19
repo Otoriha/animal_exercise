@@ -8,12 +8,17 @@ primary_region = 'nrt'
 console_command = '/rails/bin/rails console'
 
 [build]
+  dockerfile = "Dockerfile"       # ルートの Dockerfile を使う
+
+[env]
+  RAILS_ENV = "production"
+  RAILS_SERVE_STATIC_FILES = "true"
 
 [deploy]
   release_command = './bin/rails db:prepare'
 
 [http_service]
-  internal_port = 3001
+  internal_port = 3000
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
