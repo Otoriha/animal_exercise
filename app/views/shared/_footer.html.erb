@@ -1,20 +1,65 @@
-<footer class="fixed bottom-0 left-0 right-0 bg-black text-white shadow-md z-10">
-  <nav class="flex justify-around items-center h-16 max-w-3xl mx-auto px-4">
-    <%= link_to new_contact_path, class: "flex flex-col items-center text-center p-2 hover:bg-gray-800 rounded-md" do %>
-      <span>📝</span>
-      <span class="text-xs mt-1">お問い合わせ</span>
-    <% end %>
-    <%= link_to privacy_path, class: "flex flex-col items-center text-center p-2 hover:bg-gray-800 rounded-md" do %>
-      <span>🔒</span>
-      <span class="text-xs mt-1">プライバシーポリシー</span>
-    <% end %>
-    <%= link_to terms_path, class: "flex flex-col items-center text-center p-2 hover:bg-gray-800 rounded-md" do %>
-      <span>📜</span>
-      <span class="text-xs mt-1">利用規約</span>
-    <% end %>
-    <%= link_to help_path, class: "flex flex-col items-center text-center p-2 hover:bg-gray-800 rounded-md" do %>
-      <span>❓</span>
-      <span class="text-xs mt-1">ヘルプ</span>
-    <% end %>
-  </nav>
+<footer class="bg-gray-800 text-white py-8" style="background-color: #1f2937; color: white; padding-top: 2rem; padding-bottom: 2rem;">
+  <div class="container mx-auto px-4 max-w-5xl" style="max-width: 64rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem;">
+    <div class="flex flex-col md:flex-row justify-between" style="display: flex; flex-direction: column; justify-content: space-between;">
+      <div class="mb-6 md:mb-0" style="margin-bottom: 1.5rem;">
+        <div class="flex items-center space-x-2 mb-4" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-amber-400 w-6 h-6" style="color: #f59e0b; width: 1.5rem; height: 1.5rem;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+          </svg>
+          <h2 class="text-lg font-bold" style="font-size: 1.125rem; font-weight: bold;">Animal Exercise</h2>
+        </div>
+        <p class="text-gray-300 text-sm" style="color: #d1d5db; font-size: 0.875rem;">あなたの筋トレをもっと楽しく、効果的に</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-8" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;">
+        <div>
+          <h3 class="text-sm font-semibold mb-3 uppercase" style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase;">サービス</h3>
+          <ul class="space-y-2 text-sm text-gray-300" style="color: #d1d5db; font-size: 0.875rem;">
+            <li style="margin-bottom: 0.5rem;"><a href="#features" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">機能紹介</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#trainings" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">トレーニングメニュー</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="#pets" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">ペットシステム</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold mb-3 uppercase" style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase;">サポート</h3>
+          <ul class="space-y-2 text-sm text-gray-300" style="color: #d1d5db; font-size: 0.875rem;">
+            <li style="margin-bottom: 0.5rem;"><a href="/help" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">ヘルプ</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/contact" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">お問い合わせ</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/faq" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">よくある質問</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h3 class="text-sm font-semibold mb-3 uppercase" style="font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem; text-transform: uppercase;">ポリシー</h3>
+          <ul class="space-y-2 text-sm text-gray-300" style="color: #d1d5db; font-size: 0.875rem;">
+            <li style="margin-bottom: 0.5rem;"><a href="/terms" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">利用規約</a></li>
+            <li style="margin-bottom: 0.5rem;"><a href="/privacy" class="hover:text-white" style="color: #d1d5db; text-decoration: none;">プライバシーポリシー</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="border-t border-gray-700 mt-8 pt-6 text-center text-sm text-gray-400" style="border-top: 1px solid #374151; margin-top: 2rem; padding-top: 1.5rem; text-align: center; font-size: 0.875rem; color: #9ca3af;">
+      <p>© <%= Date.today.year %> Animal Exercise All rights reserved.</p>
+    </div>
+  </div>
 </footer>
+
+<style>
+  @media (min-width: 768px) {
+    .grid-cols-2 {
+      grid-template-columns: repeat(3, 1fr) !important;
+    }
+    .flex-col {
+      flex-direction: row !important;
+    }
+    .mb-6 {
+      margin-bottom: 0 !important;
+    }
+  }
+  
+  footer a:hover {
+    color: white !important;
+  }
+</style>

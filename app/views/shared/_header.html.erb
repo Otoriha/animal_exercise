@@ -1,22 +1,65 @@
-<header class="bg-black shadow-sm p-4 flex justify-between items-center fixed top-0 left-0 right-0 z-10">
-    <div class="flex items-center space-x-2">
-        <h1 id="username" class="text-xl font-bold text-gray-800">
-            <%= if current_user
-                  "#{current_user.first_name} #{current_user.last_name}"
-                else
-                  'ゲスト'
-                end %>さん
-        </h1>
-        <span id="last-login" class="text-xs text-gray-600"></span>
-    </div>
-    <div class="flex items-center space-x-4">
-        <% if current_user %>
-          <%= button_to "ログアウト", logout_path, method: :delete, class: "text-white hover:text-gray-300" %>
-        <% end %>
-        <button>
-            <%= link_to user_profiles_path do %>
-                <span>⚙️</span>
-            <% end %>
-        </button>
-    </div>
+<%# ページがトップページかどうかを判定 %>
+<% is_toppage = controller_name == 'toppage' && action_name == 'index' %>
+
+<header class="bg-white shadow-sm p-4 flex justify-between items-center <%= 'fixed top-0 left-0 right-0 z-10' unless is_toppage %>" style="background-color: white; box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); padding: 1rem; display: flex; justify-content: space-between; align-items: center; <%= 'position: fixed; top: 0; left: 0; right: 0; z-index: 10;' unless is_toppage %>">
+  <div class="flex items-center space-x-2" style="display: flex; align-items: center; gap: 0.5rem;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="text-amber-500 w-7 h-7" style="color: #f59e0b; width: 1.75rem; height: 1.75rem;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+    </svg>
+    <%= link_to root_path, class: "text-xl font-bold text-gray-800 hover:text-amber-600", style: "font-size: 1.25rem; font-weight: bold; color: #1f2937; text-decoration: none;" do %>
+      Animal Exercise
+    <% end %>
+  </div>
+
+  <div class="flex items-center space-x-4" style="display: flex; align-items: center; gap: 1rem;">
+    <% if current_user %>
+      <%# ログイン済みユーザーの場合 %>
+      <% unless is_toppage %>
+        <span class="text-gray-700 text-sm" style="color: #374151; font-size: 0.875rem;">
+          <%= "#{current_user.first_name} #{current_user.last_name}" %>さん
+        </span>
+      <% end %>
+      <%= link_to "マイページ", mypage_path, class: "text-gray-700 hover:text-amber-600 text-sm font-medium", style: "color: #374151; font-size: 0.875rem; font-weight: 500; text-decoration: none;" %>
+      <%= button_to "ログアウト", logout_path, method: :delete, class: "text-gray-700 hover:text-amber-600 text-sm font-medium bg-transparent border-0 p-0", style: "color: #374151; font-size: 0.875rem; font-weight: 500; background: transparent; border: none; padding: 0; cursor: pointer;" %>
+    <% else %>
+      <%# 未ログインユーザーの場合 %>
+      <%= link_to "ログイン", login_path, class: "text-gray-700 hover:text-amber-600 text-sm font-medium", style: "color: #374151; font-size: 0.875rem; font-weight: 500; text-decoration: none;" %>
+      <%= link_to "新規登録", new_user_path, class: "bg-amber-600 hover:bg-amber-700 text-white py-2 px-4 rounded font-medium", style: "background-color: #d97706; color: white; padding: 0.5rem 1rem; border-radius: 0.25rem; font-weight: 500; text-decoration: none;" %>
+    <% end %>
+  </div>
 </header>
+
+<style>
+  /* ヘッダーのホバー効果 */
+  header a:hover {
+    color: #d97706 !important;
+  }
+  
+  /* 新規登録ボタンのホバー効果 */
+  header a[href*="new_user"]:hover {
+    background-color: #b45309 !important;
+    color: white !important;
+  }
+  
+  /* ログアウトボタンのホバー効果 */
+  header button:hover {
+    color: #d97706 !important;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 640px) {
+    header {
+      padding: 0.75rem !important;
+    }
+    
+    header .flex:last-child {
+      gap: 0.5rem !important;
+    }
+    
+    header span,
+    header a,
+    header button {
+      font-size: 0.75rem !important;
+    }
+  }
+</style>
