@@ -2,3 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "./script" // マイページ用のスクリプトをインポート
+import "./toppage" // トップページ用のスクリプトをインポート
