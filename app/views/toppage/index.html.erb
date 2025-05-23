@@ -27,17 +27,42 @@
       <div class="relative w-full h-80 bg-gray-100 rounded-lg shadow-lg overflow-hidden" id="hero-slider" style="position: relative; width: 100%; height: 20rem; background-color: #f3f4f6; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); overflow: hidden;">
         <%# スライダーの画像コンテナ %>
         <div class="slider-container h-full" style="height: 100%;">
-          <div class="slider-slide active" style="position: absolute; width: 100%; height: 100%; opacity: 1; transition: opacity 0.5s ease-in-out; z-index: 1;">
+          <div class="slider-slide active" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; z-index: 0;">
             <%# MediaPipeを使ったフォームチェック機能のイメージ %>
-            <%#= image_tag "hero-slide-1.jpg", alt: "AIフォームチェック", class: "w-full h-full object-cover" %>
+            <div class="w-full h-full bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center text-white" style="width: 100%; height: 100%; background: linear-gradient(to bottom right, #60a5fa, #2563eb); display: flex; align-items: center; justify-content: center; color: white;">
+              <div class="text-center" style="text-align: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 4rem; width: 4rem; margin: 0 auto 1rem;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <h3 class="text-xl font-bold mb-2" style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">AIフォームチェック</h3>
+                <p class="text-sm" style="font-size: 0.875rem;">リアルタイムでフォームを分析</p>
+              </div>
+            </div>
           </div>
-          <div class="slider-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out;">
+          <div class="slider-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; z-index: 0;">
             <%# ペットの進化過程を表すイメージ %>
-            <%#= image_tag "hero-slide-2.jpg", alt: "成長するペット", class: "w-full h-full object-cover" %>
+            <div class="w-full h-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center text-white" style="width: 100%; height: 100%; background: linear-gradient(to bottom right, #4ade80, #16a34a); display: flex; align-items: center; justify-content: center; color: white;">
+              <div class="text-center" style="text-align: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 4rem; width: 4rem; margin: 0 auto 1rem;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+                <h3 class="text-xl font-bold mb-2" style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">成長するペット</h3>
+                <p class="text-sm" style="font-size: 0.875rem;">トレーニングで進化していくパートナー</p>
+              </div>
+            </div>
           </div>
-          <div class="slider-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.5s ease-in-out;">
+          <div class="slider-slide" style="position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; z-index: 0;">
             <%# トレーニング記録のイメージ %>
-            <%#= image_tag "hero-slide-3.jpg", alt: "トレーニング記録", class: "w-full h-full object-cover" %>
+            <div class="w-full h-full bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center text-white" style="width: 100%; height: 100%; background: linear-gradient(to bottom right, #a78bfa, #7c3aed); display: flex; align-items: center; justify-content: center; color: white;">
+              <div class="text-center" style="text-align: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 4rem; width: 4rem; margin: 0 auto 1rem;">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+                <h3 class="text-xl font-bold mb-2" style="font-size: 1.25rem; font-weight: bold; margin-bottom: 0.5rem;">詳細な記録</h3>
+                <p class="text-sm" style="font-size: 0.875rem;">進捗をグラフで可視化</p>
+              </div>
+            </div>
           </div>
         </div>
         
@@ -188,8 +213,13 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
       <%# 腕立て伏せ %>
-      <div class="border rounded-lg p-4 flex hover:shadow-md transition-shadow" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; display: flex; transition: box-shadow 0.3s;">
+      <div class="border rounded-lg p-4 flex hover:shadow-md transition-shadow training-card" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; display: flex; transition: box-shadow 0.3s;">
         <%#= image_tag "pushup.jpg", alt: "腕立て伏せ", class: "w-20 h-20 rounded-lg object-cover mr-4" %>
+        <div class="w-20 h-20 rounded-lg bg-blue-100 flex items-center justify-center mr-4" style="width: 5rem; height: 5rem; border-radius: 0.5rem; background-color: #dbeafe; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 2rem; width: 2rem; color: #2563eb;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
         <div>
           <div class="flex items-center" style="display: flex; align-items: center;">
             <h3 class="font-bold" style="font-weight: bold;">腕立て伏せ</h3>
@@ -201,8 +231,13 @@
       </div>
       
       <%# スクワット %>
-      <div class="border rounded-lg p-4 flex hover:shadow-md transition-shadow" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; display: flex; transition: box-shadow 0.3s;">
+      <div class="border rounded-lg p-4 flex hover:shadow-md transition-shadow training-card" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; display: flex; transition: box-shadow 0.3s;">
         <%#= image_tag "squat.jpg", alt: "スクワット", class: "w-20 h-20 rounded-lg object-cover mr-4" %>
+        <div class="w-20 h-20 rounded-lg bg-purple-100 flex items-center justify-center mr-4" style="width: 5rem; height: 5rem; border-radius: 0.5rem; background-color: #ede9fe; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 2rem; width: 2rem; color: #7c3aed;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
         <div>
           <div class="flex items-center" style="display: flex; align-items: center;">
             <h3 class="font-bold" style="font-weight: bold;">スクワット</h3>
@@ -214,8 +249,13 @@
       </div>
       
       <%# 腹筋 %>
-      <div class="border rounded-lg p-4 flex hover:shadow-md transition-shadow" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; display: flex; transition: box-shadow 0.3s;">
+      <div class="border rounded-lg p-4 flex hover:shadow-md transition-shadow training-card" style="border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; display: flex; transition: box-shadow 0.3s;">
         <%#= image_tag "situp.jpg", alt: "腹筋", class: "w-20 h-20 rounded-lg object-cover mr-4" %>
+        <div class="w-20 h-20 rounded-lg bg-green-100 flex items-center justify-center mr-4" style="width: 5rem; height: 5rem; border-radius: 0.5rem; background-color: #dcfce7; display: flex; align-items: center; justify-content: center; margin-right: 1rem;">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 2rem; width: 2rem; color: #16a34a;">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </div>
         <div>
           <div class="flex items-center" style="display: flex; align-items: center;">
             <h3 class="font-bold" style="font-weight: bold;">腹筋</h3>
@@ -254,7 +294,7 @@
 </section>
 
 <%# デモモーダル %>
-<div id="demo-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 50; display: none; align-items: center; justify-content: center;">
+<div id="demo-modal" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.5); z-index: 50; display: none; align-items: center; justify-content: center;">
   <div class="bg-white rounded-lg max-w-3xl w-full mx-4 overflow-hidden" style="background-color: white; border-radius: 0.5rem; max-width: 48rem; width: 100%; margin: 0 1rem; overflow: hidden;">
     <div class="p-4 border-b flex justify-between items-center" style="padding: 1rem; border-bottom: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center;">
       <h3 class="font-bold text-lg" style="font-weight: bold; font-size: 1.125rem;">アプリのデモ</h3>
@@ -267,6 +307,15 @@
     <div class="p-6" style="padding: 1.5rem;">
       <div class="aspect-w-16 aspect-h-9 bg-gray-100" style="position: relative; padding-bottom: 56.25%; background-color: #f3f4f6;">
         <%#= video_tag "app-demo.mp4", controls: true, class: "w-full h-full object-cover" %>
+        <div class="w-full h-full flex items-center justify-center text-gray-500" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: #6b7280;">
+          <div class="text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="height: 4rem; width: 4rem; margin: 0 auto 1rem;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p style="font-size: 1.125rem; font-weight: 500;">デモビデオは準備中です</p>
+          </div>
+        </div>
       </div>
       <p class="mt-4 text-gray-600" style="margin-top: 1rem; color: #4b5563;">
         Animal Exerciseを使えば、AIによるフォームチェックでより効果的なトレーニングができます。
@@ -381,7 +430,8 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 0;
   }
 
   .slider-slide.active {

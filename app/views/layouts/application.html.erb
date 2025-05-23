@@ -15,7 +15,11 @@
     <link rel="apple-touch-icon" href="/icon.png">
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "application.tailwind", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <% if Rails.env.development? %>
+      <script type="module" src="/assets/application.js"></script>
+    <% else %>
+      <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <% end %>
   </head>
 
   <% is_toppage = controller_name == 'toppage' && action_name == 'index' %>
