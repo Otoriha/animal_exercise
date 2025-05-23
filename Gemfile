@@ -33,7 +33,7 @@ gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
-gem "letter_opener_web", "2.0.0"
+gem "letter_opener_web", "3.0.0"
 
 gem "pry-rails"
 gem "pry-byebug"
