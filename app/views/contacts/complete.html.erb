@@ -1,11 +1,19 @@
-<p>お問い合わせ内容確認</p>
-<p><%= @message %></p>
+<main class="mx-auto px-4">
+  <section class="w-full max-w-lg bg-white rounded-lg shadow p-6">
+    <h2 class="text-xl font-bold mb-4">お問い合わせ内容確認</h2>
+    <p class="mb-6 text-gray-700 whitespace-pre-wrap"><%= @message %></p>
 
-<p>
-  <% if current_user %>
-    <%= link_to 'マイページへ戻る', '/mypage' %> <%# とりあえずルーティングエラー出ないようにリンクを適当なものにしてます %>
-    <%= link_to 'トップページへ戻る', root_path %>
-  <% else %>
-    <%= link_to 'トップページへ戻る', root_path %>
-  <% end %>
-</p>
+    <div class="flex justify-end space-x-4">
+      <% if current_user %>
+        <%= link_to 'マイページへ戻る', mypage_path,
+              class:"px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded text-sm font-semibold" %>
+        <%= link_to 'トップページへ戻る', root_path,
+              class:"px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-800 rounded text-sm font-semibold" %>
+      <% else %>
+        <%= link_to 'トップページへ戻る', root_path,
+              class:"px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded text-sm font-semibold" %>
+      <% end %>
+    </div>
+  </section>
+</main>
+

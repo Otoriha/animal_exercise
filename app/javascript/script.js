@@ -199,7 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (trainingStatsTotalEl) trainingStatsTotalEl.textContent = `${trainingStats.total_time_minutes || 0}分`;
     if (trainingStatsAccuracyEl) trainingStatsAccuracyEl.textContent = `${trainingStats.average_form_accuracy || 0}%`;
 
-    // タブ切り替え機能
+    // タブ切り替え機能 - Stimulusコントローラーとの競合を避けるためコメントアウト
+    /*
     function setActiveTab(targetTab) {
         if (!tabTriggers || !tabContents) return;
 
@@ -235,4 +236,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 初期タブを設定 (例: ペット情報)
     setActiveTab('pet');
+    */
 });

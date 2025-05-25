@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "toppage/index"
   get "posts/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -11,8 +12,9 @@ Rails.application.routes.draw do
   get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
-  root "mypage#index"
+  root "toppage#index"
 
+  # Mypage routes
   get "mypage", to: "mypage#index", as: :mypage
 
   get "login", to: "user_sessions#new"

@@ -1,36 +1,50 @@
-<h1>プライバシーポリシー</h1>
+<main class="container mx-auto px-4 py-6 max-w-3xl">
+  <div class="bg-white rounded-lg shadow p-6 space-y-6">
+    <h1 class="text-2xl font-bold text-gray-800">プライバシーポリシー</h1>
 
-<style>
-  .page {
-    writing-mode: horizontal-tb;
-    white-space: normal;
-    letter-spacing: normal;
-    word-break: normal;
-  }
-</style>
+    <p class="text-gray-700">
+      「アニマルフィットネス」（以下「本サービス」）は、ユーザーのプライバシーを尊重し、個人情報を適切に取り扱います。
+    </p>
 
-<div class="page">
-  <p>「アニマルフィットネス」（以下「本サービス」）は、ユーザーのプライバシーを尊重し、個人情報を適切に取り扱います。</p>
+    <section>
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-1 mb-2">1. 収集する情報</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>アカウント作成時に入力された情報（名前、メールアドレスなど）</li>
+        <li>トレーニングデータ（回数、フォーム判定結果など）</li>
+      </ul>
+    </section>
 
-  <h2>1. 収集する情報</h2>
-  <ul>
-    <li>アカウント作成時に入力された情報（名前、メールアドレスなど）</li>
-    <li>トレーニングデータ（回数、フォーム判定結果など）</li>
-  </ul>
+    <section>
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-1 mb-2">2. 利用目的</h2>
+      <ul class="list-disc list-inside text-gray-700 space-y-1">
+        <li>ユーザーの動物トレーナー進化の記録</li>
+        <li>サービス改善のための統計データ収集</li>
+      </ul>
+    </section>
 
-  <h2>2. 利用目的</h2>
-  <ul>
-    <li>ユーザーの動物トレーナー進化の記録</li>
-    <li>サービス改善のための統計データ収集</li>
-  </ul>
+    <section>
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-1 mb-2">3. 第三者提供</h2>
+      <p class="text-gray-700">
+        法令に基づく場合を除き、第三者に個人情報を提供することはありません。
+      </p>
+    </section>
 
-  <h2>3. 第三者提供</h2>
-  <p>法令に基づく場合を除き、第三者に個人情報を提供することはありません。</p>
+    <section>
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-1 mb-2">4. セキュリティ対策</h2>
+      <p class="text-gray-700">
+        個人情報の漏洩・滅失防止のため、厳重な管理を行います。
+      </p>
+    </section>
 
-  <h2>4. セキュリティ対策</h2>
-  <p>個人情報の漏洩・滅失防止のため、厳重な管理を行います。</p>
+    <section>
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-1 mb-2">5. お問い合わせ</h2>
+      <p class="text-gray-700">
+        プライバシーに関するお問い合わせは、専用フォームよりご連絡ください。
+      </p>
+    </section>
 
-  <h2>5. お問い合わせ</h2>
-  <p>プライバシーに関するお問い合わせは、専用フォームよりご連絡ください。</p>
-  <%= link_to "トップへ" , root_path %>
-</div>
+    <div class="pt-4 mt-4 border-t border-gray-200">
+      <%= link_to "トップへ戻る", root_path, class: "inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded" %>
+    </div>
+  </div>
+</main>
