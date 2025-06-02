@@ -1,33 +1,50 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-10 col-lg-8 mx-auto">
-      <h1>ユーザー登録</h1>
-      <%= form_with model: @user do |f| %>
-        <div class="mb-3">
-          <%= f.label :last_name, class: "form-label" %>
-          <%= f.text_field :last_name, class: "form-control" %>
+<main class="container mx-auto px-4 py-6 max-w-md mt-16 mb-20">
+    <div class="bg-white rounded-lg shadow-lg p-8">
+        <h1 class="text-center text-gray-700 text-2xl md:text-3xl font-bold mb-6">ユーザー登録</h1>
+        
+        <%= form_with model: @user, class: "w-full mx-auto" do |f| %>
+            <div class="flex flex-col mb-6">
+                <div class="w-full mb-4">
+                    <%= f.label :last_name, "姓", class: "block text-gray-700 text-sm font-bold mb-2" %>
+                    <%= f.text_field :last_name,
+                        class: "shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500",
+                        placeholder: "山田" %>
+                </div>
+                
+                <div class="w-full mb-4">
+                    <%= f.label :first_name, "名", class: "block text-gray-700 text-sm font-bold mb-2" %>
+                    <%= f.text_field :first_name,
+                        class: "shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500",
+                        placeholder: "太郎" %>
+                </div>
+                
+                <div class="w-full mb-4">
+                    <%= f.label :email, "メールアドレス", class: "block text-gray-700 text-sm font-bold mb-2" %>
+                    <%= f.email_field :email,
+                        class: "shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500",
+                        placeholder: "example@email.com" %>
+                </div>
+                
+                <div class="w-full mb-4">
+                    <%= f.label :password, "パスワード", class: "block text-gray-700 text-sm font-bold mb-2" %>
+                    <%= f.password_field :password,
+                        class: "shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500",
+                        placeholder: "••••••••" %>
+                </div>
+                
+                <div class="w-full mb-6">
+                    <%= f.label :password_confirmation, "パスワード確認", class: "block text-gray-700 text-sm font-bold mb-2" %>
+                    <%= f.password_field :password_confirmation,
+                        class: "shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-blue-500",
+                        placeholder: "••••••••" %>
+                </div>
+                
+                <%= f.submit "登録", class: "w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300" %>
+            </div>
+        <% end %>
+        
+        <div class="text-center mt-6">
+            <%= link_to 'ログインページへ', login_path, class: "text-blue-500 hover:text-blue-700 font-medium" %>
         </div>
-        <div class="mb-3">
-          <%= f.label :first_name, class: "form-label" %>
-          <%= f.text_field :first_name, class: "form-control" %>
-        </div>
-        <div class="mb-3">
-          <%= f.label :email, class: "form-label" %>
-          <%= f.email_field :email, class: "form-control" %>
-        </div>
-        <div class="mb-3">
-          <%= f.label :password, class: "form-label" %>
-          <%= f.password_field :password, class: "form-control" %>
-        </div>
-        <div class="mb-3">
-          <%= f.label :password_confirmation, class: "form-label" %>
-          <%= f.password_field :password_confirmation, class: "form-control" %>
-        </div>
-        <%= f.submit "登録", class: "btn btn-primary" %>
-      <% end %>
-      <div class='text-center'>
-        <%= link_to 'ログインページへ', login_path %>
-      </div>
     </div>
-  </div>
-</div>
+</main>
